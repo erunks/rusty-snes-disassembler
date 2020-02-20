@@ -6,5 +6,4 @@ Referencing the following [guide](http://www.emulator101.com/welcome.html) all a
   - If not, you can do that following this [guide](https://doc.rust-lang.org/cargo/getting-started/installation.html) for Rust
 
 ## To build and run the package do the following:
-1. `cargo build --release`
-2. `./target/release/rusty-snes-disassembler`
+`cargo build && cargo run`
