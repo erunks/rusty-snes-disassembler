@@ -1,4 +1,4 @@
-# A first foray into the 6502 disassmbler world
+# A first foray into the 6502 disassembler world
 Referencing the following [guide](http://www.emulator101.com/welcome.html) all about emulators
 
 ## Prerequisites to running this package:
