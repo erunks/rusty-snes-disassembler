@@ -1,9 +1,9 @@
 use std::process;
 
-mod opCodeHandler;
+mod opcode;
 
 fn main() {
-    if let Err(err) = opCodeHandler::load_op_codes("./src/6502ops.csv") {
+    if let Err(err) = opcode::handler::load_op_codes("./src/6502ops.csv") {
         println!("{}", err);
         process::exit(1);
     }
