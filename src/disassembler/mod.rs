@@ -13,7 +13,7 @@ pub struct Disassembler {
 }
 
 impl Disassembler {
-  pub fn new() -> Self {
+  pub fn new() -> Disassembler {
     let opcodes = match handler::load_op_codes("./src/6502ops.csv") {
       Ok(opcodes) => opcodes,
       Err(e) => {
