@@ -14,7 +14,7 @@ pub struct Disassembler {
 
 impl Disassembler {
   pub fn new() -> Disassembler {
-    let opcodes = match handler::load_op_codes("./src/6502ops.csv") {
+    let opcodes = match handler::load_op_codes("./opcodes/6502ops.csv") {
       Ok(opcodes) => opcodes,
       Err(e) => {
         println!("Opcodes failed to load: {}", e);
@@ -28,14 +28,14 @@ impl Disassembler {
     }
   }
 
-  pub fn load_rom(&mut self, file_path: &str) -> Result<BufReader<File>, Box<dyn Error>> {
+  pub fn load_rom(&mut self, file_path: &str) {
     self.rom = file_path.to_string();
-    let file = File::open(file_path)?;
-    let reader = BufReader::new(file);
-    Ok(reader)
   }
 
-  // fn disassemble_rom(&self) -> Result<(), Box<dyn Error>> {
-  //   let rom : BufReader = self.rom;
-  // }
+  pub fn disassemble_rom(&self) -> Result<(), Box<dyn Error>> {
+    let file = File::open(&self.rom)?;
+    let reader = BufReader::new(file);
+
+    Ok(())
+  }
 }

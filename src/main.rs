@@ -5,7 +5,8 @@ mod disassembler;
 
 fn main() {
     let mut d = disassembler::Disassembler::new();
-    if let Err(err) = d.load_rom("../roms/Pieces.smc") {
+    d.load_rom("./roms/Pieces.smc");
+    if let Err(err) = d.disassemble_rom() {
         println!("{}", err);
         process::exit(1);
     }
