@@ -229,7 +229,10 @@ impl Disassembler {
 
     print!("{:-}", opstring);
 
-    let print_branch_target = || { print!("\t\t; ${:04x}", 0x5000 + pointer_counter + 2 + i64::try_from(opcodes(1)).unwrap()) };
+    let print_branch_target = || { 
+      print!("\t\t; ${:04x}", 0x5000 + pointer_counter + 2 + i64::from(opcodes(1) as i8));
+    };
+
     match opcodes(0) {
       0x10 | 0x30 | 0x50 | 0x70 | 0x90 | 0xB0 | 0xD0 | 0xF0 => print_branch_target(),
       _ => ()
